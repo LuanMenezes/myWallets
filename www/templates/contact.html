@@ -1,0 +1,37 @@
+<ion-view>
+    <ion-nav-bar class="bar bar-positive">
+        <ion-nav-back-button>Back</ion-nav-back-button>
+        <ion-nav-title>
+            MyWallets - Contact
+        </ion-nav-title>
+    </ion-nav-bar>
+
+    <ion-content class="has-header padding">
+        <form ng-submit="sendContact()">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Name</span>
+                    <input type="text" ng-model="msg.name" placeholder="Your name..." required>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email</span>
+                    <input type="email" ng-model="msg.email" placeholder="exemple@test.com" required>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Phone</span>
+                    <input type="tel" ng-model="msg.phone" placeholder="(xx) XXXX-XXXX">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Message</span>
+                    <textarea ng-model="msg.message" placeholder="Enter your questions here..." required></textarea>
+                </label>
+                <padding>
+                    <button class="button button-balanced button-block">
+                        <i class="icon ion-paper-airplane icon-left"></i>
+                        Send
+                    </button>
+                </padding>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

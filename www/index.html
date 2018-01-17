@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>MyWallets</title>
+
+        <link rel="manifest" href="manifest.json">
+
+        <!-- un-comment this code to enable service worker
+        <script>
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+              .then(() => console.log('service worker installed'))
+              .catch(err => console.log('Error', err));
+          }
+        </script>-->
+
+        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/select.css" rel="stylesheet">
+
+        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+        <link href="css/ionic.app.css" rel="stylesheet">
+        -->
+
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyA76n1KwhrnzcmTp8agtpvmjbUUcFlXWJI",
+                authDomain: "wallets-b3483.firebaseapp.com",
+                databaseURL: "https://wallets-b3483.firebaseio.com",
+                projectId: "wallets-b3483",
+                storageBucket: "wallets-b3483.appspot.com",
+                messagingSenderId: "79215097595"
+            };
+            firebase.initializeApp(config);
+        </script>
+
+        <!-- ionic/angularjs js -->
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+        <script src="lib/angular-sanitize/angular-sanitize.js"></script>
+        <script src="js/select.js"></script>
+
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="lib/ngCordova/dist/ng-cordova.js"></script> 
+        <script src="cordova.js"></script>
+
+        <!-- Firebase -->
+        <script src="lib/firebase/firebase.js"></script>
+
+        <!-- AngularFire -->
+        <script src="lib/angularfire/dist/angularfire.min.js"></script>
+
+        <!-- themes -->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">-->
+
+        <!-- your app's js -->
+        <script src="js/app.js"></script>
+        <script src="js/controllers/donation.controller.js"></script>
+        <script src="js/controllers/list.controller.js"></script>
+        <script src="js/controllers/walletdetail.controller.js"></script>
+        <script src="js/controllers/contact.controller.js"></script>
+        <script src="js/controllers/create.controller.js"></script>
+        <script src="js/routes.js"></script>
+
+        <script src="lib/angular-br-filters/release/angular-br-filters.min.js"></script>
+        <script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
+        
+        <link href="lib/ion-gallery/dist/ion-gallery.css" rel="stylesheet">
+        <script src="lib/ion-gallery/dist/ion-gallery.min.js"></script>
+    </head>
+    <body ng-app="starter" ng-controller="DonationController">
+        <ion-pane>
+            <ion-nav-view></ion-nav-view>
+
+            <ion-footer-bar aling-title="left" class="bar-positive">
+                <div class="button-bar">
+                    <a class="button button-clear" ng-href="#/contact">
+                        <i class="icon ion-email icon-left"></i>
+                    </a>
+
+                    <a class="button button-clear" ng-href="#/donation" title="Make a donation for the app to continue growing.">
+                        <i class="icon ion-social-usd icon-left"></i>
+                    </a>
+
+                    <a class="button button-clear" ng-href="#/list">
+                        <i class="icon ion-home icon-left"></i>
+                    </a>
+                    
+                    <a class="button button-clear" ng-href="#/create" title="Insert your wallet">
+                        <i class="icon ion-social-bitcoin icon-left"></i>
+                    </a>
+
+                    <a class="button button-clear" ng-href="#/faq">
+                        <i class="icon ion-help icon-left"></i>
+                    </a>
+                </div>
+            </ion-footer-bar>
+
+        </ion-pane>
+    </body>
+</html>

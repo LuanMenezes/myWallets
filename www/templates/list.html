@@ -1,0 +1,27 @@
+<ion-view hide-back-button="true">
+    <ion-nav-bar class="bar bar-positive">
+        <ion-nav-back-button>Voltar</ion-nav-back-button>
+        <ion-nav-title>
+            MyWallets
+        </ion-nav-title>
+    </ion-nav-bar>
+
+    <ion-content class="has-header padding">
+        <div class="bar bar-header item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="Search ..." ng-model="search">
+            </label>
+        </div>
+        <div class="list card" ng-repeat="wallet in listWallets | filter : search" ui-sref='walletdetail({walletDetail: wallet})'>
+            <div class="item item-avatar">
+                <img ng-src="https://files.coinmarketcap.com/static/img/coins/32x32/{{wallet.coin.id}}.png"
+                     class="full-image">
+                <h2><strong>{{wallet.coin.name}}</strong></h2>
+                <p><b>Address: </b>{{wallet.address}}</p>
+                <p ng-show="wallet.token"><b>Token: </b>{{wallet.token}}</p>
+                <p><b>Qtd: </b>{{wallet.quantity}}</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

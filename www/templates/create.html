@@ -1,0 +1,58 @@
+<ion-view>
+    <ion-nav-bar class="bar bar-positive">
+        <ion-nav-back-button>Back</ion-nav-back-button>
+        <ion-nav-title>
+            MyWallets - Create
+        </ion-nav-title>
+    </ion-nav-bar>
+
+    <ion-content class="has-header padding">
+        <form ng-submit="register()">
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <h2 class="title"><strong>Info Wallet</strong></h2>
+                    <div class="list">
+                        <!--<label class="item item-input item-stacked-label">-->
+                            <strong class="input-label">Coin</strong>
+                            <ui-select ng-model="wallet.coin" theme="select2" title="Select a coin"
+                                       style="width: 100%;" append-to-body="true">
+                                <ui-select-match placeholder="Select a coin...">{{$select.selected.name}}
+                                </ui-select-match>
+                                <ui-select-choices repeat="coin in listCoins | propsFilter: {name: $select.search}">
+                                    <div ng-bind-html="coin.name | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+                        <!--</label>-->
+
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Address</span>
+                            <input type="text" ng-model="wallet.address" placeholder="XXXXXXXXXXXXXXXXXXXX">
+                        </label>
+
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Token</span>
+                            <input type="text" ng-model="wallet.token" placeholder="XXXXXXXXXXX">
+                        </label>
+
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Quantity</span>
+                            <input type="number" ng-model="wallet.quantity" placeholder="0.00001" step="0.00001">
+                        </label>
+
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Value Invested</span>
+                            <input type="number" ng-model="wallet.vlinvested" step="0.001" placeholder="R$ XXX,XXX">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <padding>
+                <button type="submit" class="button button-balanced button-block">
+                    <i class="icon ion-paper-airplane icon-left"></i>
+                    Create
+                </button>
+            </padding>
+        </form>
+    </ion-content>
+
+</ion-view>

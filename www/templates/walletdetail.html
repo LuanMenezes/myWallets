@@ -1,0 +1,67 @@
+<ion-view>
+
+    <ion-nav-bar class="bar bar-positive">
+        <ion-nav-back-button>Back</ion-nav-back-button>
+        <ion-nav-title>
+            MyWallet
+        </ion-nav-title>
+    </ion-nav-bar>
+
+    <ion-content>
+        <ion-list>
+            <div class="item item-divider">
+                <b>{{coinDetail.nome}} - {{coinDetail.cidade}} / {{coinDetail.estado.sigla}}</b>
+            </div>
+
+            <div class="item item-content">
+                <img ng-src="{{coinDetail.perfil}}" class="full-image">
+            </div>
+            <div class="item item-text-wrap">
+                <ul class="list">
+                    <li class="item item-toggle" ng-show="coinDetail.genero.length"><b>Sexo:</b>
+                        {{coinDetail.genero}}
+                    </li>
+                    <li class="item item-toggle"><b>Idade:</b> {{coinDetail.dtNascimento}}</li>
+                    <li class="item item-toggle" ng-show="coinDetail.altura.length"><b>Altura:</b>
+                        {{coinDetail.altura}} cm
+                    </li>
+                    <li class="item item-toggle" ng-show="coinDetail.preco.length"><b>Preço:</b>
+                        {{coinDetail.preco| currency:'R$ '}}
+                    </li>
+                    <li class="item item-text-wrap"><b>Address:</b> {{coinDetail.adrress}}</li>
+                </ul>
+            </div>
+
+
+            <div class="item item-divider">
+                <div class="row">
+                    <div class="col">
+                        <a class="button" ng-href="{{'tel:' + coinDetail.telefone}}">
+                            <i class="icon ion-ios-telephone"></i>
+                            {{coinDetail.telefone}}
+                            <!--{{coinDetail.telefone| brPhoneNumber}}-->
+                        </a>
+
+                        <a class="button" ng-href="{{'tel:' + coinDetail.whatsapp}}">
+                            <i class="icon ion-social-whatsapp"></i>
+                            {{coinDetail.whatsapp}}
+                            <!--{{coinDetail.whatsapp| brPhoneNumber}}-->
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--GALERIA-->
+            <div class="row">
+                <div class="col">
+                    <!--<div ng-if="isMobile">-->
+                    <ion-gallery ion-gallery-items="items" ion-zoom-events="true" ion-gallery-row="4"></ion-gallery>
+                    <!--</div>-->
+                    <!--<div ng-if="isDesktop">-->
+                    <!--<ion-gallery ion-gallery-items="coinDetail.items" ion-gallery-row="5"></ion-gallery>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+
+</ion-view>
